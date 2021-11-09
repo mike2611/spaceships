@@ -29,7 +29,7 @@ const RocketList = (props) => {
 export default RocketList;
 
 RocketList.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   // rocket_name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   // flickr_images: PropTypes.string.isRequired,

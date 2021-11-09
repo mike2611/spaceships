@@ -12,11 +12,13 @@ const Misions = () => {
       dispatch(getMissions());
     }
   }, []);
-  console.log(missions);
 
   return (
     <div>
-      prueba
+      <h1>Missions Info</h1>
+      {missions.map((mission) => (
+        `ID: ${mission.mission_id} Name: ${mission.mission_name}`
+      ))}
     </div>
   );
 };

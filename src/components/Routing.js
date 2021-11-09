@@ -3,13 +3,14 @@ import {
 } from 'react-router-dom';
 import { Route } from 'react-router';
 import Navbar from './Navbar';
+import Rocket from './RocketList';
 
 const Routing = () => (
   <Router>
     <Navbar />
     <Routes>
       <Route exact path="/" />
-      <Route path="/rockets" />
+      <Route path="/rockets" element={<Rocket />} />
       <Route path="/myProfile" />
     </Routes>
   </Router>

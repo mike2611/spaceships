@@ -1,29 +1,36 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '../App.css';
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getRockets } from '../redux/rockets/rockets';
+import React from 'react';
+// import { useDispatch } from 'react-redux';
+// import { getRockets } from '../redux/rockets/rockets';
+import PropTypes from 'prop-types';
 
-const Rocket = () => {
-  const dispatch = useDispatch();
+const RocketList = (props) => {
+  // const dispatch = useDispatch();
+  const {
+    id, /* rocket_name, */ description, /* flickr_images, */
+  } = props;
 
-  useEffect(() => {
-    dispatch(getRockets());
-  }, []);
-
-  const rocketlist = useSelector((state) => state.rocketsReducer);
-  const rockets = rocketlist;
-  console.log(rockets);
   return (
     <div>
       <div>
         <div>
-          rockets
+          {id}
+        </div>
+        <div>
+          {description}
         </div>
       </div>
     </div>
   );
 };
 
-export default Rocket;
+export default RocketList;
+
+RocketList.propTypes = {
+  id: PropTypes.string.isRequired,
+  // rocket_name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  // flickr_images: PropTypes.string.isRequired,
+};

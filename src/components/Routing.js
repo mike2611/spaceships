@@ -3,7 +3,7 @@ import {
 } from 'react-router-dom';
 import { Route } from 'react-router';
 import Navbar from './Navbar';
-import Rocket from './RocketList';
+import Rocket from './Rockets';
 
 const Routing = () => (
   <Router>

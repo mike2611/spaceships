@@ -40,11 +40,9 @@ body {
 .not-join {
   border: 1px solid #343a40;
   color: #343a40;
-
 }
 
 .join {
   border: 1px solid #dc3645;
   color: #dc3645;
 }
-

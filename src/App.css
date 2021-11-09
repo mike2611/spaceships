@@ -12,8 +12,7 @@ body {
   font-weight: 500;
 }
 
-.not-member-btn {
-  background-color: #6d757d;
+.member-btn {
   border-radius: 10px;
   width: 11rem;
   color: white;
@@ -22,12 +21,30 @@ body {
   border: none;
 }
 
-.join-mission-btn {
+.not-member {
+  background-color: #6d757d;
+}
+
+.member {
+  background-color: #18a2b8;
+}
+
+.join-btn {
   background-color: transparent;
   border-radius: 5px;
   height: 3rem;
   width: 10rem;
-  color: #343a40;
   font-size: 1.4rem;
-  border: 1px solid #343a40;
 }
+
+.not-join {
+  border: 1px solid #343a40;
+  color: #343a40;
+
+}
+
+.join {
+  border: 1px solid #dc3645;
+  color: #dc3645;
+}
+

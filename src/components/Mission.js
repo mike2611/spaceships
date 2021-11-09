@@ -8,15 +8,17 @@ const Mission = (props) => {
 
   return (
     <tr>
-      <th scope="row"><h2 className="btn mission-name">{missionName}</h2></th>
+      <th scope="row" className="align-top">
+        <h2 className="mission-name">{missionName}</h2>
+      </th>
       <th>{description}</th>
       <th className="align-middle">
-        <button className="not-member-btn" type="button">
+        <button className="member-btn not-member" type="button">
           NOT A MEMBER
         </button>
       </th>
       <th className="align-middle">
-        <button className="join-mission-btn" type="button">
+        <button className="join-btn not-join" type="button">
           Join Mission
         </button>
       </th>

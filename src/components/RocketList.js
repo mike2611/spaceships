@@ -3,13 +3,9 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '../App.css';
 import './rocket.css';
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { useDispatch } from 'react-redux';
-// import { getRockets } from '../redux/rockets/rockets';
 import PropTypes from 'prop-types';
 
 const RocketList = (props) => {
-  // const dispatch = useDispatch();
   const {
     rocketName, description, flickrImages,
   } = props;
@@ -22,7 +18,6 @@ const RocketList = (props) => {
           <div className="col-sm-8">
             <h2>
               Loading
-              <FontAwesomeIcon icon={['fas', 'spinner']} />
             </h2>
           </div>
         </div>

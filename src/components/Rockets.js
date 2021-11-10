@@ -17,7 +17,6 @@ const Rocket = () => {
 
   const rocketlist = useSelector((state) => state.rocketsReducer);
   const rockets = rocketlist;
-  console.log(rocketlist);
   Object.entries(rockets).map((rocket) => (
     rocketArr.push(rocket[1])
   ));

@@ -5,6 +5,7 @@ import { Route } from 'react-router';
 import Navbar from './Navbar';
 import Missions from './Missions';
 import Rocket from './Rockets';
+import MyProfile from './MyProfile';
 
 const Routing = () => (
   <Router>
@@ -12,7 +13,7 @@ const Routing = () => (
     <Routes>
       <Route exact path="/" element={<Missions />} />
       <Route path="/rockets" element={<Rocket />} />
-      <Route path="/myProfile" />
+      <Route path="/myProfile" element={<MyProfile />} />
     </Routes>
   </Router>
 );

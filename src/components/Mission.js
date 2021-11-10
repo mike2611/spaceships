@@ -5,20 +5,20 @@ import { joinMission, leaveMission } from '../redux/missions/missionsReducer';
 const Mission = (props) => {
   const dispatch = useDispatch();
 
-  const joinLeaveMission = (e) => {
-    if (e.target.value === 'true') {
-      dispatch(joinMission(e.target.value));
-    } else {
-      dispatch(leaveMission(e.target.value));
-    }
-  };
-
   const {
     missionId,
     missionName,
     description,
     reserved,
   } = props;
+
+  const joinLeaveMission = (e) => {
+    if (reserved === 'false') {
+      dispatch(joinMission(e.target.value));
+    } else {
+      dispatch(leaveMission(e.target.value));
+    }
+  };
 
   return (
     <tr>

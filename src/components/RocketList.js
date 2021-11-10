@@ -53,5 +53,5 @@ export default RocketList;
 RocketList.propTypes = {
   rocketName: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  flickrImages: PropTypes.string.isRequired,
+  flickrImages: PropTypes.string.isRequired
 };

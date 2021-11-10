@@ -27,9 +27,11 @@ const Mission = (props) => {
       </th>
       <th>{description}</th>
       <th className="align-middle">
-        <button className="member-btn not-member" type="button">
-          NOT A MEMBER
-        </button>
+        <div className={reserved === 'true' ? 'd-flex justify-content-center member-badge member'
+          : 'd-flex justify-content-center member-badge not-member'}
+        >
+          {reserved === 'true' ? 'ACTIVE MEMBER' : 'NOT A MEMBER'}
+        </div>
       </th>
       <th className="align-middle">
         <button className={reserved === 'true' ? 'join-btn join' : 'join-btn not-join'} type="button" value={missionId} onClick={joinLeaveMission}>

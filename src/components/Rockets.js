@@ -26,7 +26,7 @@ const Rocket = () => {
       dispatch(getRockets());
     }
   }, []);
-  
+
   return (
     <div>
       <div>

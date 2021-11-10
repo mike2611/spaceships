@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { joinMission } from '../redux/missions/missionsReducer';
+import { joinMission, leaveMission } from '../redux/missions/missionsReducer';
 
 const Mission = (props) => {
   const dispatch = useDispatch();
 
-  const enterMission = (e) => {
-    dispatch(joinMission(e.target.value));
+  const joinLeaveMission = (e) => {
+    if (e.target.value === 'true') {
+      dispatch(joinMission(e.target.value));
+    } else {
+      dispatch(leaveMission(e.target.value));
+    }
   };
 
   const {
@@ -28,7 +32,7 @@ const Mission = (props) => {
         </button>
       </th>
       <th className="align-middle">
-        <button className={reserved === 'true' ? 'join-btn join' : 'join-btn not-join'} type="button" value={missionId} onClick={enterMission}>
+        <button className={reserved === 'true' ? 'join-btn join' : 'join-btn not-join'} type="button" value={missionId} onClick={joinLeaveMission}>
           {reserved === 'true' ? 'Leave Mission' : 'Join Mission'}
         </button>
       </th>

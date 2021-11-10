@@ -46,3 +46,21 @@ body {
   border: 1px solid #dc3645;
   color: #dc3645;
 }
+
+.logo-nav {
+  margin-right: 20%;
+}
+
+.img-logo {
+  width: 8%;
+}
+
+.title-nav {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.links-nav {
+  font-size: 1.2rem;
+  color: #3ca2b8;
+}

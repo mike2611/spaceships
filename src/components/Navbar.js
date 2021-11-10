@@ -3,41 +3,44 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '../App.css';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import planet from '../imgs/planet.png';
 
 const Navbar = () => (
   <nav className="navBar navbar-expand-lg p-4 border border-bottom bg-white">
-    <div className="container">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-sm-12">
-            <div className="row">
-              <div className="col-sm-6 p-3">
-                <span className="blu monB titl">Space Traveler&apos;s Hub</span>
-              </div>
-              <div className="col-sm-2 monR linkNav align-padding">
-                <NavLink
-                  className={(isActive) => `nav-link ${!isActive ? 'unselected' : ''}`}
-                  to="/"
-                >
-                  Missions
-                </NavLink>
-              </div>
-              <div className="col-sm-2 monR linkNav align-padding">
-                <NavLink
-                  className={(isActive) => `nav-link ${!isActive ? 'unselected' : ''}`}
-                  to="/rockets"
-                >
-                  Rockets
-                </NavLink>
-              </div>
-              <div className="col-sm-2 monR linkNav align-padding">
-                <NavLink
-                  className={(isActive) => `nav-link ${!isActive ? 'unselected' : ''}`}
-                  to="/myProfile"
-                >
-                  My Profile
-                </NavLink>
-              </div>
+    <div className="container-fluid">
+      <div>
+        <div>
+          <div className="d-flex align-items-center">
+            <div className="ms-5 logo-nav">
+              <span className="me-4">
+                <img className="img-logo" src={planet} alt="logo" />
+              </span>
+              <span className="title-nav">Space Traveler&apos;s Hub</span>
+            </div>
+            <div>
+              <NavLink
+                className={(isActive) => `nav-link ${!isActive ? 'unselected' : ''}`}
+                to="/rockets"
+              >
+                <h2 className="links-nav">Rockets</h2>
+              </NavLink>
+            </div>
+            <div>
+              <NavLink
+                className={(isActive) => `nav-link ${!isActive ? 'unselected' : ''}`}
+                to="/"
+              >
+                <h2 className="links-nav">Missions</h2>
+              </NavLink>
+            </div>
+            <div className="mb-1">|</div>
+            <div>
+              <NavLink
+                className={(isActive) => `nav-link ${!isActive ? 'unselected' : ''}`}
+                to="/myProfile"
+              >
+                <h2 className="links-nav">My Profile</h2>
+              </NavLink>
             </div>
           </div>
         </div>

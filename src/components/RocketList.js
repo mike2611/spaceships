@@ -1,22 +1,47 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '../App.css';
+import './rocket.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const RocketList = (props) => {
   const {
-    id, description,
+    rocketName, description, flickrImages,
   } = props;
 
-  return (
-    <div>
-      <div>
-        <div>
-          {id}
+  if (rocketName === 'rocketName' && description === 'Rocket description' && flickrImages === 'Images') {
+    return (
+      <div className="container p-4">
+        <div className="row">
+          <div className="col-sm-4" />
+          <div className="col-sm-8">
+            <h2>
+              Loading
+            </h2>
+          </div>
         </div>
-        <div>
-          {description}
+      </div>
+    );
+  }
+  return (
+    <div className="container p-4">
+      <div className="row">
+        <div className="col-sm-4">
+          <img src={flickrImages} alt="user" className="rocketImage" />
+        </div>
+        <div className="col-sm-8">
+          <div className="row">
+            <h3>
+              {rocketName}
+            </h3>
+          </div>
+          <div className="row">
+            {description}
+          </div>
+          <div className="row">
+            <button type="button" className="btn btn-primary col-sm-4">RESERVE ROCKET</button>
+          </div>
         </div>
       </div>
     </div>
@@ -26,6 +51,7 @@ const RocketList = (props) => {
 export default RocketList;
 
 RocketList.propTypes = {
-  id: PropTypes.string.isRequired,
+  rocketName: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  flickrImages: PropTypes.string.isRequired,
 };

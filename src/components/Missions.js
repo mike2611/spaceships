@@ -29,10 +29,11 @@ const Misions = () => {
           <tbody>
             {missions.map((mission) => (
               <Mission
-                key={`${mission.mission_id}`}
-                missionId={`${mission.mission_id}`}
-                missionName={`${mission.mission_name}`}
-                description={`${mission.description}`}
+                key={`${mission[0].mission_id}`}
+                missionId={`${mission[0].mission_id}`}
+                missionName={`${mission[0].mission_name}`}
+                description={`${mission[0].description}`}
+                reserved={`${mission[1].reserved}`}
               />
             ))}
           </tbody>

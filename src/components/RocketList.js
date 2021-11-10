@@ -5,7 +5,7 @@ import './rocket.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { bookRocket } from '../redux/rockets/rockets';
+import { bookRocket, cancelRocket } from '../redux/rockets/rockets';
 
 const RocketList = (props) => {
   const dispatch = useDispatch();
@@ -15,7 +15,11 @@ const RocketList = (props) => {
   } = props;
 
   const letsBookTheRocket = (e) => {
-    dispatch(bookRocket(e.target.value));
+    if (reserved === 'false') {
+      dispatch(bookRocket(e.target.value));
+    } else {
+      dispatch(cancelRocket(e.target.value));
+    }
   };
 
   if (rocketName === 'rocketName' && description === 'Rocket description' && flickrImages === 'Images') {

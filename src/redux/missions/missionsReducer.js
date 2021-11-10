@@ -19,23 +19,21 @@ export const getMissions = () => async (dispatch) => {
   }
 };
 
-export const joinMission = (missionId, dispatch) => {
-  dispatch({
-    type: JOIN_MISSION,
-    payload: missionId,
-  });
-};
+export const joinMission = (payload) => ({
+  type: JOIN_MISSION,
+  payload,
+});
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_MISSIONS:
-      return action.payload;
+      return action.payload.map((mission) => ([mission, { reserved: false }]));
     case JOIN_MISSION:
       return state.map((mission) => {
-        if (mission.id !== action.payload) {
+        if (mission[0].mission_id !== action.payload) {
           return mission;
         }
-        return { ...state, reserved: true };
+        return Object.assign([mission[0], { reserved: true }]);
       });
     default:
       return state;

@@ -18,26 +18,10 @@ const Rocket = () => {
   const rocketlist = useSelector((state) => state.rocketsReducer);
   const rockets = rocketlist;
   console.log(rocketlist);
-
-  /* Object.entries(rockets).forEach((element) => {
-    console.log('element', element);
-    // console.log('data', element.data);
-    /* const [key, value] = element;
-    console.log('key', key);
-    console.log('value', value);
-    // console.log('value1', value[1]);
-    rocketArr.push(value[1].forEach((item) => (
-      console.log(item)
-    )));
-    // rocketArr.push(value);
-  }); */
   Object.entries(rockets).map((rocket) => (
-    // console.log(rocket[1])
-    // console.log(typeof rocket[1])
     rocketArr.push(rocket[1])
   ));
   const rocketInfo = rocketArr[0];
-  console.log(rocketInfo);
   useEffect(() => {
     if (rocketArr.length === 0) {
       dispatch(getRockets());

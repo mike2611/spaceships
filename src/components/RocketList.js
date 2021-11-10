@@ -49,7 +49,12 @@ const RocketList = (props) => {
             </h3>
           </div>
           <div className="row">
-            {description}
+            <span>
+              { reserved === 'true'
+                ? <button type="button" className="badge badge-info col-sm-2">Reserved </button>
+                : '' }
+              { description }
+            </span>
           </div>
           <div className="row">
             { reserved === 'true'

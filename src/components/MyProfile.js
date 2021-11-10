@@ -12,13 +12,18 @@ const MyProfile = () => {
       dispatch(getMissions());
     }
   }, []);
+
   return (
-    <>
+    <div className="container w-25">
       <h1>My Missions</h1>
       <ul className="list-group">
-        <li className="list-group-item">Example</li>
+        {missions.filter((mission) => mission[1].reserved === true).map((filteredMision) => (
+          <li className="list-group-item" key={`${filteredMision[0].mission_id}filtered`}>
+            {filteredMision[0].mission_name}
+          </li>
+        ))}
       </ul>
-    </>
+    </div>
   );
 };
 

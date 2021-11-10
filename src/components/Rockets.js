@@ -16,7 +16,7 @@ const Rocket = () => {
   const rocketArr = [];
   const rocketlist = useSelector((state) => state.rocketsReducer);
   const rockets = rocketlist;
-  // console.log(rockets);
+  console.log(rocketlist);
 
   /* Object.entries(rockets).forEach((element) => {
     console.log('element', element);
@@ -44,10 +44,9 @@ const Rocket = () => {
           { rocketInfo.map((rocket) => (
             <RocketList
               key={`${rocket.id}`}
-              id={`${rocket.id}`}
               rocketName={`${rocket.rocket_name}`}
               description={`${rocket.description}`}
-              images={`${rocket.flickr_images}`}
+              flickrImages={`${rocket.flickr_images}`}
             />
           )) }
         </div>

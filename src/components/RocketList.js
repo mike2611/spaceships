@@ -9,19 +9,19 @@ import PropTypes from 'prop-types';
 const RocketList = (props) => {
   // const dispatch = useDispatch();
   const {
-    id, rocketName, description, images,
+    rocketName, description, flickrImages,
   } = props;
-
   return (
-    <div>
-      <div>
-        <div>
-          {id}
+    <div className="container">
+      <div className="row">
+        <div className="col-sm-4">
+          <img src={flickrImages} alt="user" className="userImage" />
         </div>
-        <div>
-          {rocketName}
-          {description}
-          {images}
+        <div className="col-sm-8">
+          <div className="row">
+            {rocketName}
+            {description}
+          </div>
         </div>
       </div>
     </div>
@@ -31,8 +31,7 @@ const RocketList = (props) => {
 export default RocketList;
 
 RocketList.propTypes = {
-  id: PropTypes.number.isRequired,
   rocketName: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  images: PropTypes.string.isRequired,
+  flickrImages: PropTypes.string.isRequired,
 };

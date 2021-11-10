@@ -47,14 +47,18 @@ const Rocket = () => {
     <div>
       <div>
         <div>
-          { rocketInfo.map((rocket) => (
-            <RocketList
-              key={`${rocket.id}`}
-              rocketName={`${rocket.rocket_name}`}
-              description={`${rocket.description}`}
-              flickrImages={`${rocket.flickr_images}`}
-            />
-          )) }
+          { rocketInfo !== undefined
+            ? rocketInfo.map((rocket) => (
+              <RocketList
+                key={`${rocket.id}`}
+                rocketName={`${rocket.rocket_name}`}
+                description={`${rocket.description}`}
+                flickrImages={`${rocket.flickr_images}`}
+              />
+            ))
+            : (
+              <RocketList key="key" rocketName="rocketName" description="Rocket description" flickrImages="Images" />
+            )}
         </div>
       </div>
     </div>

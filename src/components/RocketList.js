@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 const RocketList = (props) => {
   // const dispatch = useDispatch();
   const {
-    id, /* rocket_name, */ description, /* flickr_images, */
+    id, rocketName, description, images,
   } = props;
 
   return (
@@ -19,7 +19,9 @@ const RocketList = (props) => {
           {id}
         </div>
         <div>
+          {rocketName}
           {description}
+          {images}
         </div>
       </div>
     </div>
@@ -30,7 +32,7 @@ export default RocketList;
 
 RocketList.propTypes = {
   id: PropTypes.number.isRequired,
-  // rocket_name: PropTypes.string.isRequired,
+  rocketName: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  // flickr_images: PropTypes.string.isRequired,
+  images: PropTypes.string.isRequired,
 };

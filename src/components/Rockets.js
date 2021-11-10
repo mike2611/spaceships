@@ -3,7 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '../App.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import RocketList from './RocketList';
+import RocketList from './RocketList';
 import { getRockets } from '../redux/rockets/rockets';
 
 const Rocket = () => {
@@ -13,7 +13,7 @@ const Rocket = () => {
     dispatch(getRockets());
   }, []);
 
-  // const rocketArr = [];
+  const rocketArr = [];
   const rocketlist = useSelector((state) => state.rocketsReducer);
   const rockets = rocketlist;
   // console.log(rockets);
@@ -31,13 +31,25 @@ const Rocket = () => {
     // rocketArr.push(value);
   }); */
   Object.entries(rockets).map((rocket) => (
-    console.log(rocket.data)
+    // console.log(rocket[1])
+    // console.log(typeof rocket[1])
+    rocketArr.push(rocket[1])
   ));
+  const rocketInfo = rocketArr[0];
+  console.log(rocketInfo);
   return (
     <div>
       <div>
         <div>
-          hi
+          { rocketInfo.map((rocket) => (
+            <RocketList
+              key={`${rocket.id}`}
+              id={`${rocket.id}`}
+              rocketName={`${rocket.rocket_name}`}
+              description={`${rocket.description}`}
+              images={`${rocket.flickr_images}`}
+            />
+          )) }
         </div>
       </div>
     </div>

@@ -12,7 +12,9 @@ const Rocket = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getRockets());
+    if (rocketArr.length === 0) {
+      dispatch(getRockets());
+    }
   }, []);
 
   const rocketlist = useSelector((state) => state.rocketsReducer);

@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+}
+
+.mission-container {
+  width: 90%;
+}
+
+.mission-container h2,
+.mission-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.member-badge {
+  border-radius: 10px;
+  width: 11rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.not-member {
+  background-color: #6d757d;
+}
+
+.member {
+  background-color: #18a2b8;
+}
+
+.join-btn {
+  background-color: transparent;
+  border-radius: 5px;
+  height: 3rem;
+  width: 10rem;
+  font-size: 1.4rem;
+}
+
+.not-join {
+  border: 1px solid #343a40;
+  color: #343a40;
+}
+
+.join {
+  border: 1px solid #dc3645;
+  color: #dc3645;
+}
+
+.logo-nav {
+  margin-right: 20%;
+}
+
+.img-logo {
+  width: 8%;
+}
+
+.title-nav {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.links-nav {
+  font-size: 1.2rem;
+  color: #3ca2b8;
+}

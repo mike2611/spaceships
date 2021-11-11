@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar component should render Navbar component correctly 1`] = `
+<nav
+  className="navBar navbar-expand-lg p-4 border border-bottom bg-white"
+>
+  <div
+    className="container-fluid"
+  >
+    <div>
+      <div>
+        <div
+          className="d-flex align-items-center"
+        >
+          <div
+            className="ms-5 logo-nav"
+          >
+            <span
+              className="me-4"
+            >
+              <img
+                alt="logo"
+                className="img-logo"
+                src="planet.png"
+              />
+            </span>
+            <span
+              className="title-nav"
+            >
+              Space Traveler's Hub
+            </span>
+          </div>
+          <div>
+            <NavLink
+              className="nav-link"
+              to="/rockets"
+            >
+              <h2
+                className="links-nav"
+              >
+                Rockets
+              </h2>
+            </NavLink>
+          </div>
+          <div>
+            <NavLink
+              className="nav-link"
+              to="/"
+            >
+              <h2
+                className="links-nav"
+              >
+                Missions
+              </h2>
+            </NavLink>
+          </div>
+          <div
+            className="mb-1"
+          >
+            |
+          </div>
+          <div>
+            <NavLink
+              className="nav-link"
+              to="/myProfile"
+            >
+              <h2
+                className="links-nav"
+              >
+                My Profile
+              </h2>
+            </NavLink>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+`;

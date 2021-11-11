@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '../App.css';
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import planet from '../imgs/planet.png';
 
@@ -19,7 +18,6 @@ const Navbar = () => (
             </div>
             <div>
               <NavLink
-                className={(isActive) => `nav-link ${!isActive ? 'unselected' : ''}`}
                 to="/rockets"
               >
                 <h2 className="links-nav">Rockets</h2>
@@ -27,7 +25,6 @@ const Navbar = () => (
             </div>
             <div>
               <NavLink
-                className={(isActive) => `nav-link ${!isActive ? 'unselected' : ''}`}
                 to="/"
               >
                 <h2 className="links-nav">Missions</h2>
@@ -36,7 +33,6 @@ const Navbar = () => (
             <div className="mb-1">|</div>
             <div>
               <NavLink
-                className={(isActive) => `nav-link ${!isActive ? 'unselected' : ''}`}
                 to="/myProfile"
               >
                 <h2 className="links-nav">My Profile</h2>

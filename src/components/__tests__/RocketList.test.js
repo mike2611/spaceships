@@ -44,15 +44,15 @@ describe('Rocket component', () => {
     expect(component.container).toHaveTextContent('CANCEL RESERVATION');
   });
   test('If there are no props passed, it will show a loading message', () => {
-  const component = render(
-    <RocketList
-      rocketID="exampleId"
-      rocketName="rocketName"
-      description="Rocket description"
-      flickrImages="Images"
-      reserved="true"
-    />,
-  );
+    const component = render(
+      <RocketList
+        rocketID="exampleId"
+        rocketName="rocketName"
+        description="Rocket description"
+        flickrImages="Images"
+        reserved="true"
+      />,
+    );
     expect(component.container).toHaveTextContent('Loading');
   });
 });

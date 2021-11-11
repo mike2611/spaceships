@@ -17,10 +17,11 @@ const Rocket = () => {
 
   const rocketlist = useSelector((state) => state.rocketsReducer);
   const rockets = rocketlist;
+  console.log(rockets);
   Object.entries(rockets).map((rocket) => (
     rocketArr.push(rocket[1])
   ));
-  const rocketInfo = rocketArr[0];
+  // const rocketInfo = rocketArr[0];
   useEffect(() => {
     if (rocketArr.length === 0) {
       dispatch(getRockets());
@@ -31,13 +32,15 @@ const Rocket = () => {
     <div>
       <div>
         <div>
-          { rocketInfo !== undefined
-            ? rocketInfo.map((rocket) => (
+          { rockets !== 0
+            ? rockets.map((rocket) => (
               <RocketList
-                key={`${rocket.id}`}
-                rocketName={`${rocket.rocket_name}`}
-                description={`${rocket.description}`}
-                flickrImages={`${rocket.flickr_images}`}
+                key={`${rocket[0].id}`}
+                rocketID={`${rocket[0].rocket_id}`}
+                rocketName={`${rocket[0].rocket_name}`}
+                description={`${rocket[0].description}`}
+                flickrImages={`${rocket[0].flickr_images}`}
+                reserved={`${rocket[1].reserved}`}
               />
             ))
             : (

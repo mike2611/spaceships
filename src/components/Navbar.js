@@ -18,6 +18,7 @@ const Navbar = () => (
             </div>
             <div>
               <NavLink
+                className="nav-link"
                 to="/rockets"
               >
                 <h2 className="links-nav">Rockets</h2>
@@ -25,6 +26,7 @@ const Navbar = () => (
             </div>
             <div>
               <NavLink
+                className="nav-link"
                 to="/"
               >
                 <h2 className="links-nav">Missions</h2>
@@ -33,6 +35,7 @@ const Navbar = () => (
             <div className="mb-1">|</div>
             <div>
               <NavLink
+                className="nav-link"
                 to="/myProfile"
               >
                 <h2 className="links-nav">My Profile</h2>

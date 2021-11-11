@@ -1,13 +1,9 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { joinMission } from '../redux/missions/missionsReducer';
+import { joinMission, leaveMission } from '../redux/missions/missionsReducer';
 
 const Mission = (props) => {
   const dispatch = useDispatch();
-
-  const enterMission = (e) => {
-    dispatch(joinMission(e.target.value));
-  };
 
   const {
     missionId,
@@ -16,6 +12,14 @@ const Mission = (props) => {
     reserved,
   } = props;
 
+  const joinLeaveMission = (e) => {
+    if (reserved === 'false') {
+      dispatch(joinMission(e.target.value));
+    } else {
+      dispatch(leaveMission(e.target.value));
+    }
+  };
+
   return (
     <tr>
       <th scope="row" className="align-top">
@@ -23,12 +27,14 @@ const Mission = (props) => {
       </th>
       <th>{description}</th>
       <th className="align-middle">
-        <button className="member-btn not-member" type="button">
-          NOT A MEMBER
-        </button>
+        <div className={reserved === 'true' ? 'd-flex justify-content-center member-badge member'
+          : 'd-flex justify-content-center member-badge not-member'}
+        >
+          {reserved === 'true' ? 'ACTIVE MEMBER' : 'NOT A MEMBER'}
+        </div>
       </th>
       <th className="align-middle">
-        <button className={reserved === 'true' ? 'join-btn join' : 'join-btn not-join'} type="button" value={missionId} onClick={enterMission}>
+        <button className={reserved === 'true' ? 'join-btn join' : 'join-btn not-join'} type="button" value={missionId} onClick={joinLeaveMission}>
           {reserved === 'true' ? 'Leave Mission' : 'Join Mission'}
         </button>
       </th>

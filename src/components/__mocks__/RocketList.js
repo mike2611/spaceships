@@ -1,7 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import '../App.css';
-import './rocket.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -39,7 +35,7 @@ const RocketList = (props) => {
           <div className="row">
             <span>
               { reserved === 'true'
-                ? <button type="button" className="badge badge-info col-sm-2 p-1">Reserved </button>
+                ? <button type="button" className="badge badge-info col-sm-2 p-1">Reserved</button>
                 : '' }
               { description }
             </span>

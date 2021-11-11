@@ -17,11 +17,9 @@ const Rocket = () => {
 
   const rocketlist = useSelector((state) => state.rocketsReducer);
   const rockets = rocketlist;
-  console.log(rockets);
   Object.entries(rockets).map((rocket) => (
     rocketArr.push(rocket[1])
   ));
-  // const rocketInfo = rocketArr[0];
   useEffect(() => {
     if (rocketArr.length === 0) {
       dispatch(getRockets());
